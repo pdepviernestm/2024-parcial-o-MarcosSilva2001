@@ -1,0 +1,27 @@
+import example.*
+
+test "Verificar que dos personas vivan el mismo evento" {
+    
+    const persona1 = new Persona(edad = 25, valorElevado = 20)
+    const persona2 = new Persona(edad = 30, valorElevado = 15)
+
+   
+    const evento = new Evento(impacto = 20, descripcion = "Recursar ADS")
+
+    
+    const furia = new Furia()
+    furia.establecerIntensidad(100) 
+    furia.agregarPalabrota("Pero la pu*******")
+    persona1.agregarEmocion(furia) 
+
+    const alegria = new Alegria()
+    alegria.establecerIntensidad(60) 
+    persona2.agregarEmocion(alegria) 
+   
+    var grupo = [persona1, persona2]
+
+    persona1.vivirEventoEnGrupo(grupo, evento)
+   
+    assert.that(persona1.emociones[0].intensidad).equals(80) // Furia: 100 - 20
+    assert.that(persona2.emociones[0].intensidad).equals(40) // Alegría: 60 - 20
+}
