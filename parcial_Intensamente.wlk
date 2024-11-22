@@ -1,3 +1,5 @@
+//////////////////////////////////////// MARCOS SILVA MAIDANA - PARCIAL INTENSAMENTE //////////////////////////////
+
 class Persona {
   var edad
   var emociones = []
@@ -133,7 +135,7 @@ class Ansiedad inherits Emocion {
   override method liberarse(unEvento) {
     if (self.puedeLiberarse()) {
       intensidad -= unEvento.impacto()
-      nivelPreocupacion -= 5 // Reduce la preocupacion
+      nivelPreocupacion -= 5 // Reduce la preocupacion en 5 puntos
       if (nivelPreocupacion < 0) {
         nivelPreocupacion = 0  // La preocupacion no puede ser negativa
       }
@@ -141,9 +143,12 @@ class Ansiedad inherits Emocion {
   }
 }
 
-// En cuanto a herencia Ansiedad hereda atributos intensidad, eventosVividos y el metodo registrarEvento de Emocion.// En cuanto a herencia Ansiedad hereda atributos intensidad, eventosVividos y el metodo registrarEvento de Emocion.
+// EXPLICACION DEL LA EMOCION ANSIEDAD: La ansiedad se puede liberar cuando el nivel de preocupacion es > 5 y cuando su intensidad es elevada.
+
+// Por parte de Herencia Ansiedad hereda atributos intensidad, eventosVividos y el metodo registrarEvento de Emocion.
 // Sobrescribe metodos como puedeLiberarse y liberarse para implementar su propio comportamiento.
 
 // Por parte del polimorfismo tenemos una clase base Emocion con metodos como puedeLiberarse y liberarse. 
 // La clase Ansiedad tiene su propia forma de liberar la emocion, pero la tratamos de manera polimorfica igual que a todas 
 // las emociones, todas entienden el mismo mensaje
+
